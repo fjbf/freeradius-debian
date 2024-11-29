@@ -1,0 +1,453 @@
+Package: freeradius
+Version: 3.2.6+git
+Architecture: amd64
+Maintainer: Network RADIUS SARL <info@networkradius.com>
+Installed-Size: 3551
+Depends: lsb-base (>= 3.1-23.2), libc6 (>= 2.34), libcrypt1 (>= 1:4.1.0), libgdbm6 (>= 1.16), libpam0g (>= 0.99.7.1), libperl5.36 (>= 5.36.0), libreadline8 (>= 6.0), libsqlite3-0 (>= 3.7.15), libssl3 (>= 3.0.0), libsystemd0, libtalloc2 (>= 2.0.4~git20101213), libwbclient0 (>= 2:4.2.1+dfsg), freeradius-common, freeradius-config, libfreeradius3 (= 3.2.6+git), ssl-cert, adduser
+Recommends: freeradius-utils, freeradius-python3, freeradius-python2
+Suggests: freeradius-ldap, freeradius-postgresql, freeradius-mysql, freeradius-krb5, snmp
+Provides: radius-server
+Filename: debian/freeradius_3.2.6+git_amd64.deb
+Size: 1752756
+MD5sum: 62a9423f4459c4478d5345a0132f365c
+SHA1: 9f50543c8ed87f2c9624b1462d7951bf354af837
+SHA256: 720e15ddb446a3c5ab5d7c143b6dd6594772ca09f97ac468756f4b340114f0de
+Section: net
+Priority: optional
+Homepage: http://www.freeradius.org/
+Description: high-performance and highly configurable RADIUS server
+ FreeRADIUS is a high-performance RADIUS server with support for:
+  - Authentication by local files, SQL, Kerberos, LDAP, PAM, and more.
+  - Powerful policy configuration language.
+  - Proxying and replicating requests by any criteria.
+  - Support for many EAP types; TLS, PEAP, TTLS, etc.
+  - Many vendor-specific attributes.
+  - Regexp matching in string attributes.
+ and lots more.
+
+Package: freeradius-common
+Source: freeradius
+Version: 3.2.6+git
+Architecture: all
+Maintainer: Network RADIUS SARL <info@networkradius.com>
+Installed-Size: 1286
+Depends: adduser
+Conflicts: radiusd-livingston, xtradius, yardradius
+Replaces: freeradius (<< 3)
+Filename: debian/freeradius-common_3.2.6+git_all.deb
+Size: 238988
+MD5sum: 1d1d737d71a42f1ea60289b251c215b1
+SHA1: b8ad4086a232dee6c5ed05bcedada95a88a0aed6
+SHA256: 05122dcf601abdc39bc3bf5e54232a170658cf854984e37049723a44e3b3e863
+Section: net
+Priority: optional
+Homepage: http://www.freeradius.org/
+Description: FreeRADIUS common files
+ This package contains common files used by several of the other packages from
+ the FreeRADIUS project.
+
+Package: freeradius-config
+Source: freeradius
+Version: 3.2.6+git
+Architecture: amd64
+Maintainer: Network RADIUS SARL <info@networkradius.com>
+Installed-Size: 1301
+Depends: freeradius-common (>= 3), openssl, make
+Breaks: freeradius-config
+Filename: debian/freeradius-config_3.2.6+git_amd64.deb
+Size: 216608
+MD5sum: 70b79136896f8165a1f097418f8435f9
+SHA1: 2393e2864e2eae89d42845f6a89163a58e64c13c
+SHA256: c04341319adec8be55706290ce80d7ffa7365e0a80fe9cfc3287a7217698bc8a
+Section: net
+Priority: optional
+Homepage: http://www.freeradius.org/
+Description: FreeRADIUS default config files
+ This package should be used as a base for a site local packages
+ to configure the FreeRADIUS server.
+
+Package: freeradius-dbg
+Source: freeradius
+Version: 3.2.6+git
+Architecture: amd64
+Maintainer: Network RADIUS SARL <info@networkradius.com>
+Installed-Size: 4056
+Depends: freeradius (= 3.2.6+git), libssl1.0.0 (>= 1.0.1e-2+deb7u5) | libssl1.0.2 | libssl1.1 | libssl3
+Filename: debian/freeradius-dbg_3.2.6+git_amd64.deb
+Size: 3283484
+MD5sum: 56493b00ea56d8903d9d18ab8100ca07
+SHA1: 7ec6667844e87713673a27d834b264ba0354145c
+SHA256: 616317463cc7bead160a392429c5fd7ca23f4f6f400bb8c1c93eccba7f425bb6
+Section: debug
+Priority: extra
+Homepage: http://www.freeradius.org/
+Description: debug symbols for the FreeRADIUS packages
+ FreeRADIUS is a modular, high performance and feature-rich RADIUS server.
+ This package contains the detached debugging symbols for the Debian FreeRADIUS
+ packages.
+Build-Ids: 02d058da33a04a6ed91ccfd75c285fb6b3f23b3c 04e208163df0b20981f080f1493f7f53efbee268 058ce0d91094ce9bea8ce0c1da055c20ff591fc6 077d0cc453899a9242fc04f14f49892666891f59 081a96c52021ac381fac334c4fa818bd96257330 0dcc0a13b382b86515c5c6b6394a9afcb8bbfaf2 0e6391953905e913f235b2007d08c86b10a90090 0efa55ddfd2b1b74233e22e8575d5828184a0d83 12af1d51125336de9aef881dff2d10f16d488950 12cb0921489954e03497a6e2d06db8a775e28f16 12e428b586f12b1eeb2dc91b5be06c0965125c02 15f8df9e60bdd0f846c2f43ae4386e352611aa79 177533fdcc118e56177ef81db5d9ce740b2d64fb 1b01da96ac26aba9fc6183c19b4fb102b23d4107 1b04ea6103fe233078a3266c05011c7b7c1e109e 20ff51fcbd7f16a7f7abc55f5d4a47e4b502abc2 233b1a34ed4eeda2765e08cf0b89823e03493a86 281758392f6cafb69f56d5118f5971c08244f6a2 2f754789292e4b6b24577ddba8dbc6a5244b8372 309ab1c45990ab833aba10c78e3f9c17d7108138 344af2eb54e99ea23c665a72a7ed3b6a43f0cef9 3780fe3761997c8a896ada4a627399215d8aaabf 3a20ee96d2cfda053de21fccbfe6ee3bc3a12d90 3d7040df4fe38b2e261080c0a3f8ea0b696e88b6 4213f7491c1ad06d43a5b27a68de714c9939a9cf 46cd0ecc583bd21d8597f984fb2c0259b8375d5c 4a85d58895090cab857e0a902b2e35ad003c2d42 4d7884cf08dcb4b626987efec315965c312e0e1e 4dd3fb2d9612e1ece08aa1263f52b5cd4f495813 4e33c01ca6a4c2220ac0a9c04d4c58d6ccee8049 55f2fb67eb12329863839618c24d7c87908930f4 56a730fb0c36642636aac356f16efb15b69769b1 578606d799519258c1bf2dad47c41baece628758 5bb7b7e362f21cbb36aa7efbca981b4196d763d6 5c8f61fe8a5bf9dd20e07cef1ee39e9eb41398d5 5cd4ff490c9a838ade10d712a14ff3f1506e2d00 5dbb1bb630b3b8d1eac1623eb5de5e7f2b4d425b 60484ffbd3d1019bb2490dd4e8c172100131c86b 614f14ed555e0b218069c6b03977fba3c28d60a3 702e6e2e7c1e0c26c8d243c0114ccc6a6f9009b2 760863bf762c3ea73f9fa1a6ea7a79e7be5a04ef 77993cc3ea826785a473b14ce74dd971eefba291 7abc969c3c284631bd67ad767b099cd530504dd7 7d29d3ba4ec282fdc7b840c15b754c136cbed470 7ee0536538e74e1f8d2b27186e5748fc9a2a1dbd 81409446229127bd0f16a28834492cce02e8e0ba 842334cdf4ec7a430e74b6bd77051fbc7fd55dff 873bafd70a221ac678265da119dce453abd9f7e6 88f37bc6794cc43acda0f0ca477809a21893bce6 8a0e933d54d32a5685b46c31a47eaa9e18b6eff9 8abbf23640f46f0eec3d2fde6fc3994094608749 8ac4664ded20b6a7a144dbf72c7c016af0372807 8b51f2fd6aec2f84c43600d477b38addb0580eb6 8bfa557fa543459c4689c45923b2a67fc756c097 90183b521a77bff204d4deb66d4a7cf43e7088c1 962f51eb7931ec95a1608733d606e33002eb2e33 9af8d52036694a3b62a453647f2a288ac86c368d 9dab0b3b863fdcc22c10757782b2afe0f4306daa a865356e0b7ee5979b16e9ef6fd15d3c434aa824 abd0b1582555c3283cc4afc4c8fe9cb75956c49a ae21e6bd6474bb5b5fcad20aeed1ad4bd5b2bb1e afb33433e39204139bfb8fc16e3192cd3039f9e3 b649e14c59b53b68a606d0c141f677b4fe3e8f41 b70c55149bfbf878495fd7cdbbf1a87c2550e140 b82eb42c875de7080018c1b42d2c4e0a5515c00f bfd735a8c1f2550885866ba57fb003aba215e05f c4d91db1c06076cd92ef4da9ee3076c695ca22f9 c6c5470fe0f235c95b21f3616353b506d69d31b2 c6c6417047a04454efc27d95cf4bac9af66e3561 ca64de9cf73df3122212cc98b4065c8548f8d692 ccb927fe55faceaf8316910b0252b1b1c4d2cdb6 d4843f6b37cd5f146938985d7f89c783db8d56cc d8d846997cef35b08af6ae8cc40a695ffb27e6ec dc60c56dc127482748f7c94442b3dcc88ef5d772 dd20cc8377b4702844cc47863abe795495746538 de3689004aeeb061691b4b53c74d9c54ee9dcf70 de6cd8f4f6b6e309762a693b4266226e72bdd42e e1961037e5185a0106ee7546950bcb0bb484c3b9 e6cf1cc19d75c419a358411efc74a9daa33d90f1 e87af26a55986cec36ff12a13e1b279c33739c7d ed1604cf6f9fe27cd8638fb15f779e2ae312a8e3 f18659fcd0aed9c95e8eab18e49c230477bfd61a f2b4aedd755797e3968f4feba0a5e6c431828659 fd7c3759657f344c200969fa033a790e83e24e91
+
+Package: freeradius-dhcp
+Source: freeradius
+Version: 3.2.6+git
+Architecture: amd64
+Maintainer: Network RADIUS SARL <info@networkradius.com>
+Installed-Size: 143
+Depends: freeradius (= 3.2.6+git), libc6 (>= 2.34), libtalloc2 (>= 2.0.4~git20101213), libssl1.0.0 (>= 1.0.1e-2+deb7u5) | libssl1.0.2 | libssl1.1 | libssl3
+Filename: debian/freeradius-dhcp_3.2.6+git_amd64.deb
+Size: 36896
+MD5sum: 3460ee9ca365285ae6caba9423201be3
+SHA1: bddb4352ddf5f6bc8e216b82ace6deff1f85b021
+SHA256: 8423fbbf1abf991d8c48aa10476a46324afc69d9f7da4e5bfaacfc687594cb0d
+Section: net
+Priority: optional
+Homepage: http://www.freeradius.org/
+Description: DHCP module for FreeRADIUS server
+ The FreeRADIUS server can act as a DHCP server, and this module
+ is necessary for that.
+
+Package: freeradius-freetds
+Source: freeradius
+Version: 3.2.6+git
+Architecture: amd64
+Maintainer: Network RADIUS SARL <info@networkradius.com>
+Installed-Size: 46
+Depends: freeradius (= 3.2.6+git), libc6 (>= 2.4), libct4 (>= 0.64), libssl1.0.0 (>= 1.0.1e-2+deb7u5) | libssl1.0.2 | libssl1.1 | libssl3
+Filename: debian/freeradius-freetds_3.2.6+git_amd64.deb
+Size: 15760
+MD5sum: 80cb99828136ba60b7238407edf83945
+SHA1: 356bae7fd031bed3879359ecfc821a87ac580962
+SHA256: dd1835f485641592e5c2e96c97f1ab343eb0179541e2fa4e52bf8841695c9bf4
+Section: net
+Priority: optional
+Homepage: http://www.freeradius.org/
+Description: FreeTDS support for FreeRADIUS
+ This module is required to enable the FreeRADIUS server to access
+ Microsoft SQL Server/Sybase databases.
+
+Package: freeradius-krb5
+Source: freeradius
+Version: 3.2.6+git
+Architecture: amd64
+Maintainer: Network RADIUS SARL <info@networkradius.com>
+Installed-Size: 47
+Depends: freeradius (= 3.2.6+git), libc6 (>= 2.4), libcom-err2 (>= 1.43.9), libkrb5-3 (>= 1.13~alpha1+dfsg), libssl1.0.0 (>= 1.0.1e-2+deb7u5) | libssl1.0.2 | libssl1.1 | libssl3
+Filename: debian/freeradius-krb5_3.2.6+git_amd64.deb
+Size: 15088
+MD5sum: 947ab7b0898b6f5bb1c550c1fa6dd5d2
+SHA1: 562983c65878677ab639924c34398d7c1e6fc0da
+SHA256: 9987b51615b4b8c66a7ace9c87172b2d4443c8d5004bebfc7a955df36a32755b
+Section: net
+Priority: optional
+Homepage: http://www.freeradius.org/
+Description: kerberos module for FreeRADIUS server
+ The FreeRADIUS server can use Kerberos to authenticate users, and this module
+ is necessary for that.
+
+Package: freeradius-ldap
+Source: freeradius
+Version: 3.2.6+git
+Architecture: amd64
+Maintainer: Network RADIUS SARL <info@networkradius.com>
+Installed-Size: 125
+Depends: freeradius (= 3.2.6+git), libc6 (>= 2.14), libldap-2.5-0 (>= 2.5.4), libssl1.0.0 (>= 1.0.1e-2+deb7u5) | libssl1.0.2 | libssl1.1 | libssl3
+Recommends: libsasl2-modules-gssapi-mit | libsasl2-modules-gssapi-heimdal
+Filename: debian/freeradius-ldap_3.2.6+git_amd64.deb
+Size: 41284
+MD5sum: 88649f089aceb186e4be1a93e6480bf5
+SHA1: 302f8cd24bed276affa7a2b3d77b94fd3774fd24
+SHA256: 2acb58c4c1f1e070472baf00ef1cb2f916460a7ee4bec378beb6f9ea74297058
+Section: net
+Priority: optional
+Homepage: http://www.freeradius.org/
+Description: LDAP module for FreeRADIUS server
+ The FreeRADIUS server can use LDAP to authenticate users, and this module
+ is necessary for that.
+
+Package: freeradius-memcached
+Source: freeradius
+Version: 3.2.6+git
+Architecture: amd64
+Maintainer: Network RADIUS SARL <info@networkradius.com>
+Installed-Size: 51
+Depends: freeradius (= 3.2.6+git), libc6 (>= 2.4), libmemcached11 (>= 1.1.4), libssl1.0.0 (>= 1.0.1e-2+deb7u5) | libssl1.0.2 | libssl1.1 | libssl3
+Filename: debian/freeradius-memcached_3.2.6+git_amd64.deb
+Size: 15632
+MD5sum: 6d763e41fab65095a485377da4689423
+SHA1: 8a7524869d13e1153c993b7123c33c3c9ec81c6e
+SHA256: d4c4caf7327e72baee897812ebacac8525c0c951c9026e365dbb32e84730a437
+Section: net
+Priority: optional
+Homepage: http://www.freeradius.org/
+Description: Memcached module for FreeRADIUS server
+ The FreeRADIUS server can cache data in memcached and this package
+ contains the required module.
+
+Package: freeradius-mysql
+Source: freeradius
+Version: 3.2.6+git
+Architecture: amd64
+Maintainer: Network RADIUS SARL <info@networkradius.com>
+Installed-Size: 52
+Depends: freeradius (= 3.2.6+git), libc6 (>= 2.4), libmariadb3 (>= 3.0.0), libssl1.0.0 (>= 1.0.1e-2+deb7u5) | libssl1.0.2 | libssl1.1 | libssl3
+Filename: debian/freeradius-mysql_3.2.6+git_amd64.deb
+Size: 16340
+MD5sum: 54f8bf2552a2f3a4a435582ba1d8d182
+SHA1: e22f54409594a39dcb42a5f939515d5d4d434d98
+SHA256: e6ec278559948cb8bdbc5321e7b794930fa57e12808057925ac145aa74e66403
+Section: net
+Priority: optional
+Homepage: http://www.freeradius.org/
+Description: MySQL module for FreeRADIUS server
+ The FreeRADIUS server can use MySQL to authenticate users and do accounting,
+ and this module is necessary for that.
+
+Package: freeradius-perl-util
+Source: freeradius
+Version: 3.2.6+git
+Architecture: amd64
+Maintainer: Network RADIUS SARL <info@networkradius.com>
+Installed-Size: 18
+Depends: libnet-ip-perl
+Recommends: libtemplate-perl, libdbi-perl, libyaml-libyaml-perl, libdbd-pg-perl, libdbd-mysql-perl, libdbd-sqlite3-perl, libdbd-sybase-perl
+Filename: debian/freeradius-perl-util_3.2.6+git_amd64.deb
+Size: 9648
+MD5sum: 7d7f8c9353d37a2e0c0226c22fbfaa66
+SHA1: 1aa6e0e1a69e079ee06532e3eb5b77da16e29ea3
+SHA256: 79fe29ddedb0a5a8959bd4cf9728854254725f848f8dcbfac85fde8041a94542
+Section: net
+Priority: optional
+Homepage: http://www.freeradius.org/
+Description: FreeRADIUS Perl utilities
+  This package contains utilities for managing IP pools in SQL databases
+
+Package: freeradius-postgresql
+Source: freeradius
+Version: 3.2.6+git
+Architecture: amd64
+Maintainer: Network RADIUS SARL <info@networkradius.com>
+Installed-Size: 68
+Depends: freeradius (= 3.2.6+git), libc6 (>= 2.15), libpq5 (>= 8.4~), libssl1.0.0 (>= 1.0.1e-2+deb7u5) | libssl1.0.2 | libssl1.1 | libssl3
+Filename: debian/freeradius-postgresql_3.2.6+git_amd64.deb
+Size: 19768
+MD5sum: b509cdc0525802fdf8deb4b33183e74b
+SHA1: 5b76e6d495a3ce9dab15956f05f63aa618c84820
+SHA256: e9d13721d21527752d1db86b9f200ac49ff435dff90cb93aac0661e42cf8cf01
+Section: net
+Priority: optional
+Homepage: http://www.freeradius.org/
+Description: PostgreSQL module for FreeRADIUS server
+ The FreeRADIUS server can use PostgreSQL to authenticate users and do
+ accounting, and this module is necessary for that.
+
+Package: freeradius-python2
+Source: freeradius
+Version: 3.2.6+git
+Architecture: amd64
+Maintainer: Network RADIUS SARL <info@networkradius.com>
+Installed-Size: 57
+Depends: freeradius (= 3.2.6+git), libc6 (>= 2.34), libpython2.7 (>= 2.7), libssl1.0.0 (>= 1.0.1e-2+deb7u5) | libssl1.0.2 | libssl1.1 | libssl3
+Conflicts: freeradius (<< 3.2.2+git161)
+Filename: debian/freeradius-python2_3.2.6+git_amd64.deb
+Size: 20164
+MD5sum: b1b2656013b36be5295199351d5a6db1
+SHA1: 3976764b2b2183a491d89a7569a51ec59951dc08
+SHA256: 3693b75e9e06f052d2ba470f413f8b98dff68b797f6cdc9b323ff8bdf187b3e8
+Section: net
+Priority: optional
+Homepage: http://www.freeradius.org/
+Description: Python2 module for the FreeRADIUS server
+ This package provides the FreeRADIUS rlm_python (Python 2)
+ module. Prior to version 3.2.3 the Python module was included in
+ the freeradius package and would be either Python2 or Python3
+ depending on the system default.
+
+Package: freeradius-python3
+Source: freeradius
+Version: 3.2.6+git
+Architecture: amd64
+Maintainer: Network RADIUS SARL <info@networkradius.com>
+Installed-Size: 61
+Depends: freeradius (= 3.2.6+git), libc6 (>= 2.34), libpython3.11 (>= 3.11.0), libssl1.0.0 (>= 1.0.1e-2+deb7u5) | libssl1.0.2 | libssl1.1 | libssl3
+Conflicts: freeradius (<< 3.2.2+git161)
+Filename: debian/freeradius-python3_3.2.6+git_amd64.deb
+Size: 21348
+MD5sum: 753193bc3aa7a68add92e74e4f5ef19b
+SHA1: 55bd258b04ba712cd318d97748a5439107c3e372
+SHA256: a420b2c956e84377106f5258a0c53c79a965a20da82f1fe0693d15527bd02320
+Section: net
+Priority: optional
+Homepage: http://www.freeradius.org/
+Description: Python3 module for the FreeRADIUS server
+ This package provides the FreeRADIUS rlm_python3 module. Prior to
+ version 3.2.3 the Python module was included in the freeradius
+ package and would be either Python2 or Python3 depending on the
+ system default.
+
+Package: freeradius-redis
+Source: freeradius
+Version: 3.2.6+git
+Architecture: amd64
+Maintainer: Network RADIUS SARL <info@networkradius.com>
+Installed-Size: 81
+Depends: freeradius (= 3.2.6+git), libc6 (>= 2.4), libhiredis0.14 (>= 0.14.0), libssl1.0.0 (>= 1.0.1e-2+deb7u5) | libssl1.0.2 | libssl1.1 | libssl3
+Filename: debian/freeradius-redis_3.2.6+git_amd64.deb
+Size: 20216
+MD5sum: 5c0c7bf926bfdef3ddb807164597a3ca
+SHA1: e2cd64ee84b3261b558c294854968ad4a966c8eb
+SHA256: c7b83213925e7d99ac9ff08752c4a1763b1849900dde6df3aac1d01f7eb52c1d
+Section: net
+Priority: optional
+Homepage: http://www.freeradius.org/
+Description: Redis module for FreeRADIUS server
+ This module is required to enable the FreeRADIUS server to access
+ Redis databases.
+
+Package: freeradius-rest
+Source: freeradius
+Version: 3.2.6+git
+Architecture: amd64
+Maintainer: Network RADIUS SARL <info@networkradius.com>
+Installed-Size: 106
+Depends: freeradius (= 3.2.6+git), libc6 (>= 2.14), libcurl4 (>= 7.16.2), libjson-c5 (>= 0.15), libssl1.0.0 (>= 1.0.1e-2+deb7u5) | libssl1.0.2 | libssl1.1 | libssl3
+Filename: debian/freeradius-rest_3.2.6+git_amd64.deb
+Size: 33260
+MD5sum: 7fc1fd7d423a7da1d3ce69cbc04bfdca
+SHA1: f94c8360550286536d77d3b562901d6ff286bb06
+SHA256: 1e279fae0b4e95b885f37c675c6e36e9f02c4b23c4c2c0e51fe0282c56d6f800
+Section: net
+Priority: optional
+Homepage: http://www.freeradius.org/
+Description: REST module for FreeRADIUS server
+ The FreeRADIUS server can make calls to remote web APIs, and this module
+ is necessary for that.
+
+Package: freeradius-unbound
+Source: freeradius
+Version: 3.2.6+git
+Architecture: amd64
+Maintainer: Network RADIUS SARL <info@networkradius.com>
+Installed-Size: 51
+Depends: freeradius (= 3.2.6+git), libc6 (>= 2.4), libunbound8 (>= 1.8.0), libssl1.0.0 (>= 1.0.1e-2+deb7u5) | libssl1.0.2 | libssl1.1 | libssl3
+Filename: debian/freeradius-unbound_3.2.6+git_amd64.deb
+Size: 15700
+MD5sum: e97998a92b714da5e1a1c11457faf357
+SHA1: 32bb902e801f85250a09b9287cf84adb91f36e3d
+SHA256: 715f1aef41acdadb0377671006026728765ac9348e25801757a5d0cdc13047c0
+Section: net
+Priority: optional
+Homepage: http://www.freeradius.org/
+Description: Unbound module for FreeRADIUS server
+ This package is required to add libunbound DNS functionality to the
+ FreeRADIUS server.
+
+Package: freeradius-unixodbc
+Source: freeradius
+Version: 3.2.6+git
+Architecture: amd64
+Maintainer: Network RADIUS SARL <info@networkradius.com>
+Installed-Size: 38
+Depends: freeradius (= 3.2.6+git), libc6 (>= 2.4), libodbc2 (>= 2.3.1), libssl1.0.0 (>= 1.0.1e-2+deb7u5) | libssl1.0.2 | libssl1.1 | libssl3
+Filename: debian/freeradius-unixodbc_3.2.6+git_amd64.deb
+Size: 14304
+MD5sum: c59c73d9287a8e4efdf96fb9eab0cf8f
+SHA1: 0106462ec6337fc809970278c39d6a83b85f416b
+SHA256: 421d4e89c4c53516a3493a3cf42efe88d99f369b981e7af277774075b2452b3d
+Section: net
+Priority: optional
+Homepage: http://www.freeradius.org/
+Description: unixODBC module for FreeRADIUS server
+ The FreeRADIUS server can use unixODBC to access databases to authenticate users
+ and do accounting, and this module is necessary for that.
+
+Package: freeradius-utils
+Source: freeradius
+Version: 3.2.6+git
+Architecture: amd64
+Maintainer: Network RADIUS SARL <info@networkradius.com>
+Installed-Size: 378
+Depends: libc6 (>= 2.34), libgdbm6 (>= 1.16), libpcap0.8 (>= 0.9.8), libpcre3, libssl3 (>= 3.0.0), libtalloc2 (>= 2.0.4~git20101213), freeradius-common, freeradius-config, libfreeradius3 (= 3.2.6+git)
+Conflicts: radiusd-livingston, yardradius
+Replaces: freeradius (<< 3)
+Filename: debian/freeradius-utils_3.2.6+git_amd64.deb
+Size: 110072
+MD5sum: 64b958a22e7e591603b04c8ed55de2cb
+SHA1: d5dfb9cdc017eaad517742ab2ec50749142e3ef6
+SHA256: b1412ceb85374e793d515b056b3a8541853f499f9107b800a9bdd504d44c4b87
+Section: net
+Priority: optional
+Homepage: http://www.freeradius.org/
+Description: FreeRADIUS client utilities
+ This package contains various client programs and utilities from
+ the FreeRADIUS Server project, including:
+  - radclient
+  - radeapclient
+  - radlast
+  - radsniff
+  - radsqlrelay
+  - radtest
+  - radwho
+  - radzap
+  - rlm_ippool_tool
+  - rlm_sqlippool_tool
+  - smbencrypt
+
+Package: freeradius-yubikey
+Source: freeradius
+Version: 3.2.6+git
+Architecture: amd64
+Maintainer: Network RADIUS SARL <info@networkradius.com>
+Installed-Size: 55
+Depends: freeradius (= 3.2.6+git), libc6 (>= 2.4), libykclient3 (>= 2.11), libyubikey0 (>= 1.5), libssl1.0.0 (>= 1.0.1e-2+deb7u5) | libssl1.0.2 | libssl1.1 | libssl3
+Filename: debian/freeradius-yubikey_3.2.6+git_amd64.deb
+Size: 16988
+MD5sum: 7e825cd3be2b644b655402fd5f151aa4
+SHA1: 5e3520003c30c96d917d4db6ada304a1759831d9
+SHA256: dcc8f9d86001c9720ae1578e44c02765a69e618ce05c6290a9fcfc3ca360d583
+Section: net
+Priority: optional
+Homepage: http://www.freeradius.org/
+Description: Yubikey module for FreeRADIUS server
+ This package is required to add Yubikey functionality to the
+ FreeRADIUS server.
+
+Package: libfreeradius-dev
+Source: freeradius
+Version: 3.2.6+git
+Architecture: amd64
+Maintainer: Network RADIUS SARL <info@networkradius.com>
+Installed-Size: 811
+Depends: libssl1.0.0 (>= 1.0.1e-2+deb7u5) | libssl1.0.2 | libssl1.1 | libssl3, libfreeradius3 (= 3.2.6+git)
+Filename: debian/libfreeradius-dev_3.2.6+git_amd64.deb
+Size: 186924
+MD5sum: ea3ae8058380e31c5dbb984a6e275ab6
+SHA1: 111b7363eabe5f2886ac18fd6144e550b81dcfbc
+SHA256: d60b99f7e0545da13fd92e9593ae47a4e1db8a72857c9ca977d4f0a056348a0e
+Section: libdevel
+Priority: optional
+Homepage: http://www.freeradius.org/
+Description: FreeRADIUS shared library development files
+ The FreeRADIUS projects' libfreeradius-radius and libfreeradius-eap, used by
+ the FreeRADIUS server and some of the utilities.
+ .
+ This package contains the development headers and static library version.
+
+Package: libfreeradius3
+Source: freeradius
+Version: 3.2.6+git
+Architecture: amd64
+Maintainer: Network RADIUS SARL <info@networkradius.com>
+Installed-Size: 551
+Depends: libc6 (>= 2.34), libcap2 (>= 1:2.10), libpcap0.8 (>= 1.0.0), libpcre3, libssl3 (>= 3.0.0), libtalloc2 (>= 2.0.4~git20101213)
+Filename: debian/libfreeradius3_3.2.6+git_amd64.deb
+Size: 194480
+MD5sum: 998c3d93bc81e0efce3060101dc7dfe6
+SHA1: 52609cd3d6394c4409ab0bedfde34effc43bda2e
+SHA256: cecb6b0af29c9646544fd2465849e37ece196636a472e83e576006b97e1fad18
+Section: net
+Priority: optional
+Homepage: http://www.freeradius.org/
+Description: FreeRADIUS shared library
+ The FreeRADIUS projects' libfreeradius-radius and libfreeradius-eap, used by
+ the FreeRADIUS server and some of the utilities.
+
